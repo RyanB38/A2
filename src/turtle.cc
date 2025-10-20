@@ -29,7 +29,7 @@ void Turtle::fd(int length){
     newX = std::round(x + length * std::cos(orientation));
     newY = std::round(y - length * std::sin(orientation));
     // makes the color white using rgb values
-    unsigned char color[] = {255, 255, 255};
+    unsigned char color[] = {255, 0, 0};
     if (pen){
         img.draw_line(x, y, newX, newY, color);
     }
@@ -57,13 +57,17 @@ void Turtle::rt(double degrees){
 void Turtle::moveTo(int newX, int newY){
     // convert to turtle coordinates
     newX = newX + img.width() / 2;
-    newY = newY + img.height() / 2;
+    newY = img.height() / 2 - newY;
 
     if (pen){
-        unsigned char color[] = {255, 255, 255};
+        unsigned char color[] = {255, 0, 0};
         img.draw_line(x, y, newX, newY, color);
     }
     x = newX;
     y = newY; 
 
+}
+// sets the orientation of the turtle to some degrees
+void Turtle::setOrientation(double degrees){
+    orientation = radians(degrees + 90);
 }

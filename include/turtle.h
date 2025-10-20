@@ -31,6 +31,8 @@ class Turtle {
     void rt(double degrees);
     // go to method
     void moveTo(int, int);
+    // set orientation method
+    void setOrientation(double degrees);
 
 
 

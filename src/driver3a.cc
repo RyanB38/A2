@@ -5,8 +5,8 @@
 using namespace cimg_library;
 
 int main() {
-    // create an image object with black background
-    CImg<unsigned char> myimg(800, 600, 1, 3, 255);
+    // create an image object with black background (0 = black, 255 = white)
+    CImg<unsigned char> myimg(800, 600, 1, 3, 0);
 
     // just constructor for equilateral triangle
     Triangle tri(myimg);
